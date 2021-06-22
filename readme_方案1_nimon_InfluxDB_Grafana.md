@@ -3,11 +3,15 @@
 # I.I 安装InfluxDB
 # I.I.1 下载并安装InfluxDB
   首先下载InfluxDB(from https://www.power-devops.com/influxdb), 下载详细链接参考:soft_deps/download_links_for_方案1.md
+  
   以1.8.6版本为例，在监控管理节点安装InfluxDB
+  
   $ rpm -Uvh influxdb-1.8.6-1.el7.ppc64le.rpm
 # I.I.2 配置InfluxDB
   InfluxDB缺省data和metadata存放在/var/lib/influxdb下，建议修改路,比如/data下:
+  
   $ mkdir -p /data/meta /data/data /data/wal;  chown -R influxdb:influxdb /data/
+  
   $ vi /etc/influxdb/influxdb.conf
     [meta]
     # Where the metadata/raft database is stored
@@ -20,7 +24,9 @@
     wal-dir = "/data/wal"
     ...
 # I.I.3 启动InfluxDB
+    
     $ systemctl start influxdb
+    
     $ systemctl status -l influxdb
 # I.I.4 创建数据库 nimon_aix, nimon_plinux, nimon_x86linux, nimon_hmc,分别用于收集AIX&VIOS,Linux on Power,Linux on X86, HMC性能监控数据
     $ influx
@@ -38,7 +44,7 @@
 	nimon_plinux
 	nimon_x86linux
 # I.I.4 创建InfluxDB用户
-    # influx
+    $ influx
     > create user "admin" with password 'n1M0nP0wd' with all privileges;
     > show users
 	user  admin
@@ -46,7 +52,7 @@
 	admin true
     > exit
     通过admin用户连接测试
-    # influx -host localhost -port 8086 -username admin -password n1M0nP0wd
+    $ influx -host localhost -port 8086 -username admin -password n1M0nP0wd
 # I.I.4 启用InfluxDB认证
     $　vi /etc/influxdb/influxdb.conf
 	[http]
