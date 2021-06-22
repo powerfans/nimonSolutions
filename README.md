@@ -78,7 +78,7 @@ Grafana是一个跨平台的开源的度量分析和可视化工具，可以通�
 
 ![image](https://github.com/DBres4Power/monitor_Power_AIX_Linux/blob/main/Solution_1_Njmon%2BInfluxDB%2BGrafana/Solution_1.jpg)
 
-* [详见 readme_方案1_nimon_InfluxDB_Grafana](https://github.com/DBres4Power/monitor_Power_AIX_Linux/blob/main/Solution_1_Njmon%2BInfluxDB%2BGrafana/Solution_1_Readme.md)
+* [详见 readme_方案1_nimon_InfluxDB_Grafana](https://github.com/powerfans/nimonSolutions/blob/main/readme_%E6%96%B9%E6%A1%881_nimon_InfluxDB_Grafana.md)
 
 # 可视化监控方案二: Nimon+InfluxData+Prometheus+Grafana
 
