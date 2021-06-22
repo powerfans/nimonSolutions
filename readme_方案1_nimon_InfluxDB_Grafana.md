@@ -6,11 +6,11 @@
   
   以1.8.6版本为例，在监控管理节点安装InfluxDB
   
-  $ rpm -Uvh influxdb-1.8.6-1.el7.ppc64le.rpm
+    $ rpm -Uvh influxdb-1.8.6-1.el7.ppc64le.rpm
 # I.I.2 配置InfluxDB
   InfluxDB缺省data和metadata存放在/var/lib/influxdb下，建议修改路,比如/data下:
   
-  $ mkdir -p /data/meta /data/data /data/wal;  chown -R influxdb:influxdb /data/
+    $ mkdir -p /data/meta /data/data /data/wal;  chown -R influxdb:influxdb /data/
   
     $ vi /etc/influxdb/influxdb.conf
     [meta]
@@ -74,7 +74,7 @@
 # I.II.1 下载并安装Grafana
   首先下载Grafana(from https://www.power-devops.com/grafana), 下载详细链接参考:soft_deps/download_links_for_方案1.md
   以7.5.7版本为例，在监控管理节点安装Grafana
-  $ rpm -Uvh grafana-7.5.7-1.el7.ppc64le.rpm
+    $ rpm -Uvh grafana-7.5.7-1.el7.ppc64le.rpm
 # I.II.2 启动并查验状态
     $ systemctl daemon-reload; systemctl start grafana-server
     $ systemctl status -l grafana-server
