@@ -12,7 +12,7 @@
   
   $ mkdir -p /data/meta /data/data /data/wal;  chown -R influxdb:influxdb /data/
   
-  $ vi /etc/influxdb/influxdb.conf
+    $ vi /etc/influxdb/influxdb.conf
     [meta]
     # Where the metadata/raft database is stored
     dir = "/data/meta"
