@@ -1,0 +1,25 @@
+##########################################################################
+#Mon_Interval      ## Monitor interval, number in seconds
+#Mon_Count         ## Monitor counts for run nimon once
+#InfluxDB_IP       ## InfluxDB IP
+#InfluxDB_Port     ##
+#InfluxDB_User     ##
+#InfluxDB_PWD      ##
+#InfluxDB_Database ##
+##########################################################################
+#!/bin/bash
+
+Mon_Interval=5
+Mon_Count=17280
+
+InfluxDB_IP=172.16.102.110
+InfluxDB_Port=8086
+InfluxDB_Database=nimon_x86linux
+InfluxDB_User=admin
+InfluxDB_PWD=n1M0nP0wd
+
+ps -ef|grep nimon |grep H |grep -v grep |awk '{print $2}'|xargs kill -9
+rm -f /tmp/nimon.pid
+sleep 1
+/usr/local/bin/nimon -s ${Mon_Interval} -c ${Mon_Count} -k -P -b -r -n -H  -i ${InfluxDB_IP} -p ${InfluxDB_Port} -x ${InfluxDB_Database} -y ${InfluxDB_User} -z ${InfluxDB_PWD}
+
